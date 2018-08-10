@@ -27,7 +27,7 @@ public class Candidate {
 	@NotNull
 	long mobileNumber;
 	@ManyToOne(cascade=(CascadeType.PERSIST),fetch=FetchType.LAZY)
-	@JoinColumn(name="testId")
+	@JoinColumn(name="testId",nullable=false)
 	Test test;
 	@OneToMany(mappedBy="candidate")
 	List<Submission> submission;

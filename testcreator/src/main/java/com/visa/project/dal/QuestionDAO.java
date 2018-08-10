@@ -12,48 +12,58 @@ import com.visa.project.domain.Question;
 import com.visa.project.domain.Option;
 import com.visa.project.domain.Test;
 import com.visa.project.domain.TestCreator;
+
 @Component
 @Transactional
 public class QuestionDAO {
 
-	
 	@Autowired
 	EntityManager em;
-	
-	
-	
+
 	public void setEm(EntityManager em) {
 		this.em = em;
 	}
 
-	
-	public void delete(int id){
-		
+	public void delete(int id) {
+
 	}
-	
-	
-	public void changePrice(int id,float newPrice){
-		
+
+	public void changePrice(int id, float newPrice) {
+
 	}
-	
-	public Test addNewTest(Test t, String titleOfTest, String description, String testLink , String creatorId)
-	{
-		TestCreator tc = em.find(TestCreator.class, creatorId) ; 
+
+	public Test addNewTest(Test t, String titleOfTest, String description, String testLink, String creatorId) {
+		TestCreator tc = em.find(TestCreator.class, creatorId);
 		t.setTestCreator(tc);
 		em.persist(t);
 		return t;
+
+	}
+
+	public void addNewEverything(int testid, Question q, String qtext, Option o1, Option o2, Option o3, Option o4) {
+		
+		em.persist(q);
+		o1.setQuestion(q);
+		o2.setQuestion(q);
+		o3.setQuestion(q);
+		o4.setQuestion(q);
+		em.persist(o1);
+		em.persist(o2);
+		em.persist(o3);
+		em.persist(o4);
+		
+		
 		
 	}
-// public void addNewEverything()
-	
-	
-	public Question addNewQuestion(Question q, String questionText){
+
+	public Question addNewQuestion(Question q, String questionText) {
 		q.setQuestionText(questionText);
 		em.persist(q);
-		
+
 		return q;
 	}
-	public Option addNewOption(Option o, int isCorrect, String optionText){
+
+	public Option addNewOption(Option o, int isCorrect, String optionText) {
 		o.setFlagForCorrectOption(isCorrect);
 		o.setOptionText(optionText);
 		em.persist(o);
