@@ -25,15 +25,13 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<dependency>
-<<<<<<< HEAD
+	<dependency>
 	<groupId>javax.validation</groupId>
 	<artifactId>validation-api</artifactId>
 	<version>2.0.0.Final</version>
 </dependency>
 		<dependency>
-=======
->>>>>>> branch 'master' of https://github.com/Udita96/testCreatorPlatform.git
+
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.35</version>
