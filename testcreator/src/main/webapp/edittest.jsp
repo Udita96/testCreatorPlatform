@@ -44,7 +44,7 @@ $(document).ready(function(){
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="3">Edit Test <span class="sr-only">(current)</span></a>
+               <a href="<c:url value="selectalltest" />" > Edit Test </a><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Take Test</a>
@@ -66,7 +66,7 @@ $(document).ready(function(){
             <div class="col-lg-2">
                 <nav>
                 <ul id="quespanel">
-                    <a href="blankform.html"><li> <button id="addques" > add question </button></li></a>
+                    <a href="addques.jsp"><li> <button id="addques" > add question </button></li></a>
                     <li> <button id=addquesdetail> question </button></li>
                 </ul>
               </nav>
